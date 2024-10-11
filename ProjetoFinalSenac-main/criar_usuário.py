@@ -3,14 +3,14 @@ from faker import Faker
 import random
 
 def criar_usuarios(n):
-    # Conectando ao banco de dados uma vez
+   
     client = pymongo.MongoClient("mongodb+srv://guilhermo4t2l:Gui123@cluster.ue6fo.mongodb.net/")
 
     
     banco = client["LivrariaDomingos"]
     collection_usuario = banco["Usuários"]
     
-    fake = Faker()  # Cria uma instância do gerador Faker
+    fake = Faker()  
 
     for i in range(n):
       

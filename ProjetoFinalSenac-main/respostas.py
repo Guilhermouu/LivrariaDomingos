@@ -1,5 +1,8 @@
 from pymongo import MongoClient, ASCENDING
 from bson.objectid import ObjectId
+
+
+
 from datetime import datetime
 import random
 
@@ -16,21 +19,6 @@ interacoes_collection = db["interacoes"]
 
 
 
-
-def atualizar_usuario(email, livro_id, avaliacao):
-    usuarios_collection.update_one(
-        {"email": email},
-        {"$push": {"livrosLidos": {"livroId": ObjectId(livro_id), "avaliacao": avaliacao, "dataLeitura": datetime.now()}}}}
-    )
-
-def deletar_usuario(email):
-    usuarios_collection.delete_one({"email": email})
-
-# Exemplo de uso das operações CRUD
-criar_usuario("Carlos", "carlos@exemplo.com")
-print(ler_usuario("carlos@exemplo.com"))
-atualizar_usuario("carlos@exemplo.com", "<livro_id>", 5)
-deletar_usuario("carlos@exemplo.com")
 
 # Agregação
 def contar_usuarios():

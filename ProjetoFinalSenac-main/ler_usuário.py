@@ -6,8 +6,7 @@ def ler_usuario(email):
 
     banco = client["LivrariaDomingos"]
     collection_usuario = banco["Usuários"]
-    
-    # Busca o usuário pelo e-mail
+
     usuario = collection_usuario.find_one({"email": email})
     return usuario
 
