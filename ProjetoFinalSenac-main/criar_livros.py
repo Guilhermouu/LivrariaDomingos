@@ -21,4 +21,6 @@ def criar_livros(n):
             "avaliacoes": avaliacoes
         })
 
-criar_livros(2)
+# Solicitando ao usuário o número de livros a serem criados
+n_livros = int(input("Quantos livros deseja criar? "))
+criar_livros(n_livros)
